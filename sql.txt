@@ -1,0 +1,39 @@
+CREATE TABLE goods_types
+(
+    id INT NOT NULL AUTO_INCREMENT,
+    name VARCHAR(255) NOT NULL,
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE brands
+(
+    id INT NOT NULL AUTO_INCREMENT,
+    name VARCHAR(255) NOT NULL,
+    goods_type_id INT NOT NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY (goods_type_id) REFERENCES goods_types(id)
+);
+
+CREATE TABLE models
+(
+    id INT NOT NULL AUTO_INCREMENT,
+    name VARCHAR(255) NOT NULL,
+    brand_id INT NOT NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY (brand_id) REFERENCES brands(id)
+);
+
+INSERT goods_types(name) VALUES ('Легкові');
+INSERT goods_types(name) VALUES ('Мото');
+INSERT brands(name, goods_type_id) VALUES ('Audi', 2);
+INSERT brands(name, goods_type_id) VALUES ('BMW', 2);
+INSERT brands(name, goods_type_id) VALUES ('Honda', 1);
+INSERT brands(name, goods_type_id) VALUES ('Yamaha', 1);
+INSERT models(name, brand_id) VALUES ('Africa Twin', 3);
+INSERT models(name, brand_id) VALUES ('CB 400', 3);
+INSERT models(name, brand_id) VALUES ('FZ6', 4);
+INSERT models(name, brand_id) VALUES ('MT-07', 4);
+INSERT models(name, brand_id) VALUES ('A7', 1);
+INSERT models(name, brand_id) VALUES ('Q3', 1);
+INSERT models(name, brand_id) VALUES ('318', 2);
+INSERT models(name, brand_id) VALUES ('M5', 2);

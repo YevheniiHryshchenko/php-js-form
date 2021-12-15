@@ -1,0 +1,15 @@
+.main-form {
+    background-color: #db5c4c;
+    padding: 14px;
+    display: inline-flex;
+    flex-direction: column;
+}
+
+.select:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.select {
+    width: 280px;
+    height: 32px;
+}
